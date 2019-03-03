@@ -11,7 +11,7 @@ import app.transit.cetle.transitapp.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity implements Contract.View {
     public static final int WASH = 0;
     public static final int HOME = 1;
-    public static final String url = "http://108.35.15.138:5000/";
+    public static final String url = BuildConfig.SERVER_URL;
     ActivityMainBinding binding;
     Contract.Presenter presenter;
 

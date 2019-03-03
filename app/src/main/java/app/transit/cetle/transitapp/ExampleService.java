@@ -65,6 +65,9 @@ public class ExampleService extends Service {
 
 
         int delayMillis = 60000;
+        if (minutesUntil == 0) {
+            delayMillis = 1000; //keep updating and vibrating if approaching
+        }
         if (minutesUntil == 1) {
             delayMillis = 5000; //check every 5 seconds if less than 1 minute
         } else if (minutesUntil == 2) {
@@ -76,7 +79,7 @@ public class ExampleService extends Service {
         }
 
 
-        handler.postDelayed(this::checkForUpdate, 1000);
+        handler.postDelayed(this::checkForUpdate, delayMillis);
     }
 
     //check service for updates
